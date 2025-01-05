@@ -1,6 +1,5 @@
 import { Button, variants } from "@/components/Button"
 import type { Meta, StoryObj } from "@storybook/react"
-import { fn } from "@storybook/test"
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof Button> = {
@@ -18,14 +17,16 @@ const meta: Meta<typeof Button> = {
 			table: {
 				type: { summary: "ReactNode" },
 			},
+			description: "Button content",
 		},
 		variant: {
 			control: {
 				type: "select",
 			},
+			description: "Variant of the button",
 			options: Object.keys(variants.variant),
 			table: {
-				type: { summary: "select" },
+				type: { summary: `"${Object.keys(variants.variant).join('" | "')}"` },
 				defaultValue: { summary: Object.keys(variants.variant)[0] },
 			},
 		},
@@ -33,16 +34,17 @@ const meta: Meta<typeof Button> = {
 			control: {
 				type: "select",
 			},
+			description: "Size of the button",
 			options: Object.keys(variants.size),
 			table: {
-				type: { summary: "select" },
+				type: { summary: `"${Object.keys(variants.size).join('" | "')}"` },
 				defaultValue: { summary: Object.keys(variants.size)[0] },
 			},
 		},
 	},
 	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
 	args: {
-		onClick: fn(),
+		// onClick: fn(),
 	},
 }
 
