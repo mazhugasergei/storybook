@@ -25,7 +25,7 @@ const meta: Meta<typeof Button> = {
 			description: "Variant of the button",
 			table: {
 				type: { summary: `"${Object.keys(variants.variant).join('" | "')}"` },
-				defaultValue: { summary: defaultVariants.variant },
+				defaultValue: { summary: `"${defaultVariants.size}"` },
 			},
 		},
 		size: {
@@ -34,7 +34,7 @@ const meta: Meta<typeof Button> = {
 			description: "Size of the button",
 			table: {
 				type: { summary: `"${Object.keys(variants.size).join('" | "')}"` },
-				defaultValue: { summary: defaultVariants.size },
+				defaultValue: { summary: `"${defaultVariants.size}"` },
 			},
 		},
 		ref: {
